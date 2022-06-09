@@ -2,6 +2,7 @@
 html, body{
   background-color: white;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 h1{
@@ -358,5 +359,11 @@ html::-webkit-scrollbar-thumb{
 @media (min-width: 320px) and (max-width: 480px){
   img{
     object-position: bottom;
+  }
+}
+
+@media (max-width: 800px) {
+  html, body {
+  overflow-x: hidden;
   }
 }
