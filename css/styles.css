@@ -1,7 +1,7 @@
 /* General */
 html, body{
   background-color: white;
-  overflow: auto;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -359,11 +359,5 @@ html::-webkit-scrollbar-thumb{
 @media (min-width: 320px) and (max-width: 480px){
   img{
     object-position: bottom;
-  }
-}
-
-@media (max-width: 800px) {
-  html, body {
-  overflow-x: hidden;
   }
 }
