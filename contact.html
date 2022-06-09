@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="css/contact-css.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Connect With Me</h1>
+      <div class="contact-box">
+        <div class="contact-left">
+          <h3>Send a message</h3>
+          <form onsubmit="sendEmail(); reset(); return false;">
+            <div class="input-row">
+              <div class="input-group">
+                <label>Name: </label>
+                <input id="name" type="text" placeholder="John Doe">
+              </div>
+              <div class="input-group">
+                <label>Email: </label>
+                <input id="email" type="text" placeholder="johndoe@gmail.com">
+              </div>
+              <div class="input-group">
+                <label>Message: </label>
+                <textarea id="message" rows="5" placeholder="Your message"></textarea>
+              </div>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+        <div class="contact-right">
+          <h3>Reach Me</h3>
+          <table>
+            <tr>
+              <td>Email</td>
+              <td>manraj.singh@ucalgary.ca</td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>403-923-3351</td>
+            </tr>
+            <tr>
+              <td>Send me a message, I would love to talk!</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail(){
+        Email.send({
+          Host : "smtp.gmail.com",
+          Username : "stimmy099@gmail.com",
+          Password : "Manuraj_2511",
+          To : 'stimmy099@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : "New Contact Form Inquiry",
+          Body : "Name: " + document.getElementById("name").value +
+                  "<br /> Email: " + document.getElementById("email").value +
+                  "<br /> Message: " + document.getElementById("message").value;
+        }).then(
+        message => alert("Message Sent Succesfully")
+        );
+      }
+    </script>
+
+
+  </body>
+</html>
